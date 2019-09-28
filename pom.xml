@@ -169,7 +169,7 @@
             <id>release</id>
             <build>
                 <plugins>
-                    <plugin>
+                    <!--<plugin>
                         <groupId>net.nicoulaj.maven.plugins</groupId>
                         <artifactId>checksum-maven-plugin</artifactId>
                         <version>1.8</version>
@@ -189,9 +189,9 @@
                                 <algorithm>SHA1</algorithm>
                                 <algorithm>MD5</algorithm>
                             </algorithms>
-                            <!-- put your configurations here -->
+                             put your configurations here 
                         </configuration>
-                    </plugin>
+                    </plugin>-->
                     <plugin>
                         <inherited>true</inherited>
                         <groupId>org.apache.maven.plugins</groupId>
