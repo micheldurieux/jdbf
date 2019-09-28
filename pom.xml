@@ -124,24 +124,7 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
-                    <groupId>net.nicoulaj.maven.plugins</groupId>
-                    <artifactId>checksum-maven-plugin</artifactId>
-                    <version>1.8</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>artifacts</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <algorithms>
-                            <algorithm>SHA-512</algorithm>
-                        </algorithms>
-                        <!-- put your configurations here -->
-                    </configuration>
-                </plugin>
+              
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -186,6 +169,27 @@
             <id>release</id>
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>net.nicoulaj.maven.plugins</groupId>
+                        <artifactId>checksum-maven-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>artifacts</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <attachChecksums>true</attachChecksums>
+                            <appendFilename>true</appendFilename>
+                            <algorithms>
+                                <algorithm>SHA-512</algorithm>
+                            </algorithms>
+                            <!-- put your configurations here -->
+                        </configuration>
+                    </plugin>
                     <plugin>
                         <inherited>true</inherited>
                         <groupId>org.apache.maven.plugins</groupId>
