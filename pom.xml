@@ -186,6 +186,8 @@
                             <appendFilename>true</appendFilename>
                             <algorithms>
                                 <algorithm>SHA-512</algorithm>
+                                <algorithm>SHA1</algorithm>
+                                <algorithm>MD5</algorithm>
                             </algorithms>
                             <!-- put your configurations here -->
                         </configuration>
