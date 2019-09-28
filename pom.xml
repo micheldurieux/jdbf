@@ -114,7 +114,7 @@
                         <preparationGoals>clean install</preparationGoals>
                         <goals>deploy</goals>
                         
-                        <tagNameFormat>installcert-@{project.version}</tagNameFormat>
+                        <tagNameFormat>jdbf-@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
                 <plugin>
