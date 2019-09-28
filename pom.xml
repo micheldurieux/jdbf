@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.iryndin</groupId>
+    <groupId>com.github.spyhnunter99</groupId>
     <artifactId>jdbf</artifactId>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     <packaging>jar</packaging>
 
     <organization>
@@ -13,7 +13,7 @@
     </organization>
     <name>jdbf</name>
     <url>http://github.com/iryndin/jdbf</url>
-    <description>jdbf - Java library to read/write DBF files</description>
+    <description>jdbf - a fork of iryndin's Java library to read/write DBF files</description>
     
     <issueManagement>
         <system>Github</system>
@@ -40,16 +40,16 @@
         </snapshotRepository>
         <site>
             <id>website</id>
-            <url>http://github.com/iryndin/jdbf</url>
+            <url>http://github.com/spyhunter99/jdbf</url>
         </site>
     </distributionManagement>
     
     <inceptionYear>2012</inceptionYear>
 
     <scm>
-        <url>https://github.com/iryndin/jdbf</url>
-        <connection>scm:git:https://github.com/iryndin/jdbf.git</connection>
-        <developerConnection>scm:git:https://github.com/iryndin/jdbf.git</developerConnection>
+        <url>https://github.com/spyhunter99/jdbf</url>
+        <connection>scm:git:https://github.com/spyhunter99/jdbf.git</connection>
+        <developerConnection>scm:git:https://github.com/spyhunter99/jdbf.git</developerConnection>
         <tag>jdbf-2.1.0</tag>
     </scm>
 
