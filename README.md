@@ -7,6 +7,14 @@ jdbf
 
 Java utility to read/write DBF files
 
+### Version 2.2.1
+
+Fix issue [PR1](https://github.com/spyhunter99/jdbf/pull/1) - incorrect header when writing.
+
+### Version 2.2.0
+
+(This fork) publish to central
+
 ### Version 2.1.0
 
 Fix issue [#5](https://github.com/iryndin/jdbf/issues/5) - don't load DBF and MEMO files into memory when reading it (thanks to Eugene Michuk for noticing this!)

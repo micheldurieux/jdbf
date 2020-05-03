@@ -1,1 +1,3 @@
 target/
+*.dbf
+pom.xml.versionsBackup
