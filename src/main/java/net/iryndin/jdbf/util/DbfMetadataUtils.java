@@ -8,6 +8,7 @@ import net.iryndin.jdbf.core.DbfMetadata;
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class DbfMetadataUtils {
         return result;
     }
 
-    private static int calculateFullHeaderLength(List<DbfField> fields) {
+    private static int calculateFullHeaderLength(Collection<DbfField> fields) {
         int result = 32;
         result += 32 * fields.size();
         result++;
@@ -199,7 +200,7 @@ public class DbfMetadataUtils {
         headerBytes[6] = b[2];
         headerBytes[7] = b[3];
 
-        b = BitUtils.makeByte2(metadata.getFullHeaderLength());
+        b = BitUtils.makeByte2(calculateFullHeaderLength(metadata.getFields()));
         headerBytes[8] = b[0];
         headerBytes[9] = b[1];
 
