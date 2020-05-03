@@ -7,11 +7,11 @@ jdbf
 
 Java utility to read/write DBF files
 
-### Version 2.2.1
+### Version 2.2.1 May 3, 2020
 
 Fix issue [PR1](https://github.com/spyhunter99/jdbf/pull/1) - incorrect header when writing.
 
-### Version 2.2.0
+### Version 2.2.0 Sept 29, 2019
 
 (This fork) publish to central
 
