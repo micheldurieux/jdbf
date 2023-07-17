@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import net.iryndin.jdbf.core.DbfField;
 import net.iryndin.jdbf.core.DbfFieldTypeEnum;
 
@@ -16,8 +17,9 @@ public class JdbfUtils {
     public static final int RECORD_HEADER_LENGTH = 8;
     public static int EMPTY = 0x20;
     public static final int FIELD_RECORD_LENGTH = 32;
-    public static final int END_OF_FILE = 0x1a;
     public static final int HEADER_TERMINATOR = 0x0D;
+
+    public static final int END_OF_FILE = 0x1a;
 
     public static final int MEMO_HEADER_LENGTH = 0x200; // 512 bytes
 
@@ -56,9 +58,9 @@ public class JdbfUtils {
 
     public static byte[] writeDateForHeader(Date date) {
         byte[] headerBytes = {
-                (byte) (date.getYear() - 100),
-                (byte) (date.getMonth() + 1),
-                (byte) (date.getDay()),
+                (byte)(date.getYear()-100),
+                (byte)(date.getMonth()+1),
+                (byte)(date.getDay()),
         };
         return headerBytes;
     }
@@ -72,7 +74,7 @@ public class JdbfUtils {
         return dateFormatRef.get().parse(s);
     }
 
-    public static boolean compareMaps(Map<String, Object> m1, Map<String, Object> m2) {
+    public static boolean compareMaps(Map<String,Object> m1, Map<String,Object> m2) {
         if (!compareSets(m1.keySet(), m2.keySet())) {
             return false;
         }
@@ -119,20 +121,19 @@ public class JdbfUtils {
 
     private static int julianDay(Date d) {
         int year = d.getYear();
-        int month = d.getMonth() + 1;
+        int month = d.getMonth()+1;
         int day = d.getDate();
 
         double extra = (100.0 * year) + month - 190002.5;
-        long l = (long) ((367.0 * year) -
+        long l = (long)((367.0 * year) -
                 (Math.floor(7.0 * (year + Math.floor((month + 9.0) / 12.0)) / 4.0)) +
                 Math.floor((275.0 * month) / 9.0) +
                 day);
 
         // Unsigned types are too complicated they said... Only having signed ones makes it easier they said
-		if (l > Integer.MAX_VALUE) {
-			return ~((int) l & Integer.MAX_VALUE);
-		} else {
-			return (int) (l & Integer.MAX_VALUE);
-		}
+        if (l > Integer.MAX_VALUE)
+            return ~((int)l & Integer.MAX_VALUE);
+        else
+            return (int)(l & Integer.MAX_VALUE);
     }
 }
