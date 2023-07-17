@@ -15,11 +15,10 @@ import net.iryndin.jdbf.core.DbfFieldTypeEnum;
 public class JdbfUtils {
 
     public static final int RECORD_HEADER_LENGTH = 8;
+    public static final int END_OF_FILE = 0x1a;
     public static int EMPTY = 0x20;
     public static final int FIELD_RECORD_LENGTH = 32;
     public static final int HEADER_TERMINATOR = 0x0D;
-
-    public static final int END_OF_FILE = 0x1a;
 
     public static final int MEMO_HEADER_LENGTH = 0x200; // 512 bytes
 
