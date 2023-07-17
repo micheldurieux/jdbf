@@ -14,6 +14,7 @@ import net.iryndin.jdbf.core.DbfMetadata;
 import net.iryndin.jdbf.util.BitUtils;
 import net.iryndin.jdbf.util.DbfMetadataUtils;
 import net.iryndin.jdbf.util.JdbfUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class DbfWriter {
 	private OutputStream out;
@@ -114,8 +115,9 @@ public class DbfWriter {
 
 	private void writeBigDecimal(DbfField f, BigDecimal value) {
 		if (value != null) {
-			String s = value.toPlainString();
-			byte[] bytes = s.getBytes();
+			String plainString = value.toPlainString();
+			String paddedString = StringUtils.leftPad(plainString, f.getLength(), " ");
+			byte[] bytes = paddedString.getBytes();
 			if (bytes.length > f.getLength()) {
 				byte[] newBytes = new byte[f.getLength()];
 				System.arraycopy(bytes, 0, newBytes, 0, f.getLength());
