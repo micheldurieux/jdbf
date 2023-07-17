@@ -1,5 +1,7 @@
 package net.iryndin.jdbf.writer;
 
+import static net.iryndin.jdbf.util.JdbfUtils.END_OF_FILE;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.math.BigDecimal;
@@ -58,7 +60,9 @@ public class DbfWriter {
 		}
 		out.write(recordBuffer);
 	}
-
+	public void writeEOF() throws IOException {
+		out.write(END_OF_FILE);
+	}
 	private void writeIntoRecordBuffer(DbfField f, Object o) {
 		if (o == null) {
 			return;
